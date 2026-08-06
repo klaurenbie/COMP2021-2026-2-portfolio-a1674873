@@ -1,0 +1,4 @@
+Differences between Python and C#:
+- Syntax: python uses white space, C# uses {} and ;
+- Methods must be declared with type for output and input
+- Python autodetects variable types at runtime

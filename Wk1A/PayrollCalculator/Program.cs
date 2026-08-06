@@ -7,25 +7,47 @@ class Program
     static double TAX_RATE = 0.2;
     static void Main(string[] args)
     {
-        Console.Write("Enter employee first name: ");
-        string first = Console.ReadLine();
+        try
+        {
+            Console.Write("Enter employee first name: ");
+            string first = Console.ReadLine();
+            
+            Console.Write("Enter employee last name: ");
+            string last = Console.ReadLine();
+
+            Console.Write("Enter employee age: ");
+            int age = int.Parse(Console.ReadLine());        
+
+            var p = new Person(first, last, age);
+            
+            Console.Write("Hours worked: ");
+            double hours = double.Parse(Console.ReadLine());
+
+            Console.Write("Hourly rate: ");
+            double rate = Convert.ToDouble(Console.ReadLine());
+
+            double net_pay = CalculatePay(hours, rate);
+            if (p.IsAdult())
+            {
+                Console.WriteLine($"{p.FullName()} is an adult.");
+            }
+            else
+            {
+                Console.WriteLine($"{p.FullName()} is not an adult.");
+            }
+            Console.WriteLine($"{p.FullName()} earned ${net_pay:F2} after tax. ");
+
+        }
         
-        Console.Write("Enter employee last name: ");
-        string last = Console.ReadLine();
+        catch (FormatException)
+        {
+            Console.WriteLine("Error: Please enter appropriate values");
+        }
 
-        Console.Write("Enter employee age: ");
-        int age = int.Parse(Console.ReadLine());        
-
-        var p = new Person(first, last, age);
-        
-        Console.Write("Hours worked: ");
-        double hours = double.Parse(Console.ReadLine());
-
-        Console.Write("Hourly rate: ");
-        double rate = Convert.ToDouble(Console.ReadLine());
-
-        double net_pay = CalculatePay(hours, rate);
-        Console.WriteLine($"{p.fist} earned ${net_pay:F2} after tax.");
+        catch (ArgumentException ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
         
     }
 
