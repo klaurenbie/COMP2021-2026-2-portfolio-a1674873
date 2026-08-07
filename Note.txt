@@ -1,0 +1,4 @@
+Refactoring (Done together with Task 2):
+- Move command executions: add, remove, show into separate methods
+- This removes responsibilities from Main, keeping it focused on program flow, while each command method handles its own task. 
+This improves code readability, maintainability, and separation of responsibilities.
