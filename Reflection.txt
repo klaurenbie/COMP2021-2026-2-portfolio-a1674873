@@ -1,0 +1,2 @@
+- Moving to class allows better Encapsulation - protects data from being changed outside the class. It also makes it easier to verify input parameters for multiple instances of the class. It also keeps the class-related methods within the class.
+- Static typing allows earlier bug detection but requires me to remember and declare the types

@@ -15,7 +15,7 @@ class Program
         {
             try
             {
-                Console.Write("Enter a command - add, show, remove, clear, tag, get-tagged,exit: ");
+                Console.Write("Enter a command - add, show, remove, clear, tag, get-tagged, exit: ");
                 string? cmd = Console.ReadLine();
 
                 if (string.IsNullOrWhiteSpace(cmd))
