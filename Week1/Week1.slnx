@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/PracB/">
+    <Project Path="PracB/Prac1B.Tests/Prac1B.Tests.csproj" />
+    <Project Path="PracB/ToDo/ToDo.csproj" />
+  </Folder>
+</Solution>
