@@ -2,5 +2,9 @@
   <Folder Name="/PracA/">
     <Project Path="PracA/PayrollCalculator/PayrollCalculator.csproj" />
   </Folder>
+  <Folder Name="/PracB/">
+    <Project Path="PracB/BankAccount/BankAccount.csproj" />
+    <Project Path="PracB/Prac2B.Tests/Prac2B.Tests.csproj" />
+  </Folder>
   <Project Path="Prac2A.Tests/Prac2A.Tests.csproj" />
 </Solution>
