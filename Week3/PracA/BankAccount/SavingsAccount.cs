@@ -36,7 +36,7 @@ public class SavingsAccount: BankAccount
 
     public override string DisplayAccountInfo()
     {
-        return $"{base.DisplayAccountInfo()}\nInterest rate: {InterestRate}";
+        return $"{base.DisplayAccountInfo()}\nInterest rate: {InterestRate* 100}%";
     }
     
 }

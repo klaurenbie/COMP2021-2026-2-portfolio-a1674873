@@ -15,7 +15,6 @@ class Program
             Console.WriteLine(s.DisplayAccountInfo());
 
             var c = new CheckingAccount("Helen", 200m, 1);
-            Console.WriteLine($"Bank Account created. Owner: {c.Owner}, Balance: {c.Balance}$, Transaction Fee: {c.TransFee}");
             Console.WriteLine(c.DisplayAccountInfo());
             c.Deposit(15);
             c.Withdraw(215);

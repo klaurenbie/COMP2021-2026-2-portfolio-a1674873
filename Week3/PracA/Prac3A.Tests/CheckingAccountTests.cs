@@ -15,8 +15,11 @@ public class CheckingAccountTests
     [Fact]
     public void Setters_ThrowArgumentException_WhenInvalidValuesProvided()
     {
-        Assert.Throws<ArgumentException>(() => new BankAccount.SavingsAccount("10", 100m, 0.01m));
-        Assert.Throws<ArgumentException>(() => new BankAccount.SavingsAccount("10", 100m, -1m));
+        Assert.Throws<ArgumentException>(() => new BankAccount.CheckingAccount("10", 100m, 0.01m));
+        Assert.Throws<ArgumentException>(() => new BankAccount.CheckingAccount("10", 100m, -1m));
+
+        var b = new BankAccount.CheckingAccount("Test", 100m, 2m);
+        Assert.Throws<ArgumentException>(() => b.TransFee = -1m);
     }
 
     [Fact]

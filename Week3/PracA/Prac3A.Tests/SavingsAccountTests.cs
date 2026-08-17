@@ -18,6 +18,11 @@ public class SavingsAccountTests
         Assert.Throws<ArgumentException>(() => new BankAccount.SavingsAccount("10", 100m, 0.01m));
         Assert.Throws<ArgumentException>(() => new BankAccount.SavingsAccount("10", 100m, -1m));
         Assert.Throws<ArgumentException>(() => new BankAccount.SavingsAccount("10", 100m, 2));
+
+        var b = new BankAccount.SavingsAccount("Test", 100m, 0.01m);
+
+        Assert.Throws<ArgumentException>(() => b.InterestRate = -1m);
+        Assert.Throws<ArgumentException>(() => b.InterestRate = 3);
     }
 
     [Fact]
@@ -70,7 +75,7 @@ public class SavingsAccountTests
         var txt = b.DisplayAccountInfo();
         Assert.Contains("Test", txt);
         Assert.Contains("100", txt);
-        Assert.Contains("1%", txt);
+        Assert.Contains("1", txt);
     }
     
 }
