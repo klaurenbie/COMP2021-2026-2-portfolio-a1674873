@@ -1,0 +1,11 @@
+Reflect on the use of inheritance:
+
+How does this reduce duplicated code?
+- Common properties, methods, and functionality can be defined once in the base class (BankAccount) and automatically inherited by subclasses. 
+- This means we don't need to rewrite the same code for each type of account.
+
+
+What new responsibilities does each subclass have?
+- Each needs to have a new property, constructor and new methods
+- SavingsAccount has InterestRate property, ApplyInterest method and overrides DisplayAccountInfo() to display the interest rate 
+- CheckingAccount has TransFee property and overrides Withdraw, DisplayAccountInfo() to display the interest rate

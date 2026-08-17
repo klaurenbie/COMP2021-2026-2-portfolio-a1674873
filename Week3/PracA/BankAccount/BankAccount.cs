@@ -74,84 +74,9 @@ public abstract class BankAccount
             throw new ArgumentException($"Balance is lower than Withdrawing Amount. Current balance: {Balance}$.");
         }
     }
-}
 
-public class CheckingAccount: BankAccount
-{
-    private decimal _transFee;
-    
-    // property
-    public decimal TransFee
+    public virtual string DisplayAccountInfo()
     {
-        get {return _transFee;}
-
-        set
-        {
-            if (value < 0)
-            {
-                throw new ArgumentException("Transaction fee must not be negative.");
-            }
-            else
-            {
-                _transFee = value;
-            }
-        }
+        return ($"Account: {GetType().Name}\nOwner: {Owner}\nBalance: ${Balance}");
     }
-
-    // Constructor
-    public CheckingAccount(string owner, decimal balance, decimal transFee): base(owner, balance)
-    {
-        TransFee = transFee;
-    }
-
-    // Method
-    public override void Withdraw(decimal amount)
-    {
-        var total = amount + TransFee;
-        if (total <= Balance)
-        {
-            Balance = Balance - total;
-        }
-        else
-        {
-            throw new ArgumentException($"Balance is lower than Withdrawing Amount. Current balance: {Balance}$.");
-        }
-    }
-}
-
-
-public class SavingsAccount: BankAccount
-{
-    private decimal _interestRate;
-    
-    // property
-    public decimal InterestRate
-    {
-        get {return _interestRate;}
-
-        set
-        {
-            if (value > 1 || value < 0)
-            {
-                throw new ArgumentException("Interest rate must be between 0 and 1.");
-            }
-            else
-            {
-                _interestRate = value;
-            }
-        }
-    }
-
-    // Constructor
-    public SavingsAccount(string owner, decimal balance, decimal interestRate): base(owner, balance)
-    {
-        InterestRate = interestRate;
-    }
-
-    // Method
-    public void ApplyInterest()
-    {
-        Balance = Balance * (1 + InterestRate);
-    }
-    
 }
