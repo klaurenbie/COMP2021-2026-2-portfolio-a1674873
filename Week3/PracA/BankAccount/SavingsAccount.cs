@@ -38,5 +38,5 @@ public class SavingsAccount: BankAccount
     {
         return $"{base.DisplayAccountInfo()}\nInterest rate: {InterestRate* 100}%";
     }
-    
+
 }
