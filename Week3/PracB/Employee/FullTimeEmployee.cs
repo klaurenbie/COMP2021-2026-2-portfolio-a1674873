@@ -5,7 +5,7 @@ namespace Employee;
 public class FullTimeEmployee: Employee, IReportable
 {
     // attributes
-    decimal AnnualSalary {get; set;}
+    public decimal AnnualSalary {get; set;}
 
     // constructor
     [SetsRequiredMembers]
