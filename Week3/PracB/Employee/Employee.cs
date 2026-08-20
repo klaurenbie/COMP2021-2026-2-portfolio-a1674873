@@ -6,7 +6,7 @@ namespace Employee;
 public abstract class Employee
 {
     // atributes
-    protected const decimal TaxRate = 0.2m;
+    public const decimal TaxRate = 0.2m;
     public required string Name {get; set;}
 
     // constructor

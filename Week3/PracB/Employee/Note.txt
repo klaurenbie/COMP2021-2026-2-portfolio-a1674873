@@ -1,0 +1,6 @@
+FullTimeEmployee and Contractor can both be treated as Employee objects because they inherit from the Employee class.
+Polymorphism allows the program to call the same methods, such as CalculatePay() and GenerateReport(), through an Employee reference. 
+However, each subclass can provide its own implementation of these methods.
+when the program calls CalculatePay(), it uses the version that belongs to the actual type of employee. 
+For example, a full-time employee's pay is calculated from their salary, while a contractor's pay is calculated from their hours and hourly rate. 
+This allows different types of employees to be handled consistently while still producing different results based on their specific implementations.
